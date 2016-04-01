@@ -79,6 +79,6 @@ public class ChangeCalculator
 				System.exit(-1);
 			}
 		}
-		
+		scanner.close();
 	}
 }
