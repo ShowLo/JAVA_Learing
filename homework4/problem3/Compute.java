@@ -1,4 +1,4 @@
-package problem3;
+ï»¿package problem3;
 
 import java.util.StringTokenizer;
 import java.util.Scanner;
@@ -9,7 +9,7 @@ public class Compute
 {
 	public static void main(String[] args)
 	{
-		System.out.println("ÇëÊäÈë±í´ïÊ½£º");
+		System.out.println("è¯·è¾“å…¥è¡¨è¾¾å¼ï¼š");
 		Scanner scanner=new Scanner(System.in);
 		String expression=scanner.nextLine();
 		scanner.close();
@@ -22,11 +22,11 @@ public class Compute
 			if(i<4)
 			{
 				try
-				{   //½«ÊäÈëµÄ×Ö·û´®×ªÎªdoubleÊı
+				{   //å°†è¾“å…¥çš„å­—ç¬¦ä¸²è½¬ä¸ºdoubleæ•°
 					num[i]=Double.parseDouble(str.nextToken());
 				}
 				catch(NumberFormatException e)
-			    {   //ÊäÈëµÄ²»ÊÇÊı×Ö
+			    {   //è¾“å…¥çš„ä¸æ˜¯æ•°å­—
 					System.out.println("Invalid Input "+expression);
 					System.exit(-1);
 			    }
@@ -34,18 +34,18 @@ public class Compute
 			if(i==5)
 				break;
 		}
-		if(i!=4)    //ÊäÈëµÄ²»ÊÇËÄ¸öÊı×Ö
+		if(i!=4)    //è¾“å…¥çš„ä¸æ˜¯å››ä¸ªæ•°å­—
 		{
 			System.out.println("Invalid Input "+expression);
 			System.exit(-1);
 		}
 		Date printTime=new Date();
-		//ÉèÖÃ¸ñÊ½
+		//è®¾ç½®æ ¼å¼
 		SimpleDateFormat time=new SimpleDateFormat("yyyy-MM-dd h:mm:ss");
 		System.out.println(time.format(printTime));
 		result=Math.sin(num[0])*Math.cos(num[1])*Math.sqrt(Math.pow(num[2],num[3]));
 		int output=(new Double(result)).intValue();
-		//¼ÆËãÓë½á¹û×î½Ó½üµÄÕûÊı
+		//è®¡ç®—ä¸ç»“æœæœ€æ¥è¿‘çš„æ•´æ•°
 		if(result-output>=0.5)
 			++output;
 		System.out.println("result="+output);

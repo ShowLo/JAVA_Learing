@@ -1,4 +1,4 @@
-package problem5;
+ï»¿package problem5;
 
 import java.util.Scanner;
 
@@ -9,24 +9,24 @@ public class StringEncryptor
 		Encode enc=new Encode();
 		Decode dec=new Decode();
 		String input="We will break out of prison at dawn";
-		System.out.println("Ô­Ê¼×Ö·û´®Îª£º"+input);
-		//µÚÒ»ÖÖ¼ÓÃÜ·½Ê½
-		System.out.println("µÚÒ»ÖÖ¼ÓÃÜ·½Ê½¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª");
+		System.out.println("åŸå§‹å­—ç¬¦ä¸²ä¸ºï¼š"+input);
+		//ç¬¬ä¸€ç§åŠ å¯†æ–¹å¼
+		System.out.println("ç¬¬ä¸€ç§åŠ å¯†æ–¹å¼â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”");
 		String encryption1=enc.result1_encode(input);
-		System.out.println("¼ÓÃÜºóµÄ×Ö·û´®Îª£º"+encryption1);
+		System.out.println("åŠ å¯†åçš„å­—ç¬¦ä¸²ä¸ºï¼š"+encryption1);
 		String decryption1=dec.result1_decode(encryption1);
-		System.out.println("½âÃÜºóµÄ×Ö·û´®Îª£º"+decryption1);
-		//µÚ¶şÖÖ¼ÓÃÜ·½Ê½
+		System.out.println("è§£å¯†åçš„å­—ç¬¦ä¸²ä¸ºï¼š"+decryption1);
+		//ç¬¬äºŒç§åŠ å¯†æ–¹å¼
 		Scanner scanner=new Scanner(System.in);
-		System.out.println("µÚ¶şÖÖ¼ÓÃÜ·½Ê½¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª");
-		System.out.println("ÇëÊäÈë¼ÓÃÜÃÜÂë£º");
+		System.out.println("ç¬¬äºŒç§åŠ å¯†æ–¹å¼â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”");
+		System.out.println("è¯·è¾“å…¥åŠ å¯†å¯†ç ï¼š");
 		long encode_key=scanner.nextLong();
 		String encryption2=enc.result2_encode(input,encode_key);
-		System.out.println("¼ÓÃÜºóµÄ×Ö·û´®Îª£º"+encryption2);
-		System.out.println("ÇëÊäÈë½âÃÜÃÜÂë£º");
+		System.out.println("åŠ å¯†åçš„å­—ç¬¦ä¸²ä¸ºï¼š"+encryption2);
+		System.out.println("è¯·è¾“å…¥è§£å¯†å¯†ç ï¼š");
 		long decode_key=scanner.nextLong();
 		String decryption2=dec.result2_decode(encryption2,decode_key);
-		System.out.println("½âÃÜºóµÄ×Ö·û´®Îª£º"+decryption2);
+		System.out.println("è§£å¯†åçš„å­—ç¬¦ä¸²ä¸ºï¼š"+decryption2);
 	
 		scanner.close();
 	}

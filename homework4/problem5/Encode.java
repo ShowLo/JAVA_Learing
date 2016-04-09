@@ -1,4 +1,4 @@
-package problem5;
+ï»¿package problem5;
 
 import java.util.Random;
 
@@ -13,8 +13,8 @@ public class Encode
 	private void setEncodeList()
 	{
 		encodeList=new char[28];
-		encodeList[0]='a';         //¿Õ¸ñ¶ÔÓ¦µÄ×Ö·û
-		encodeList[1]='v';         //´Ó1µ½26·Ö±ğÎªaµ½zËù¶ÔÓ¦µÄ×Ö·û
+		encodeList[0]='a';         //ç©ºæ ¼å¯¹åº”çš„å­—ç¬¦
+		encodeList[1]='v';         //ä»1åˆ°26åˆ†åˆ«ä¸ºaåˆ°zæ‰€å¯¹åº”çš„å­—ç¬¦
 		encodeList[2]='e';
 		encodeList[3]='k';
 		encodeList[4]='n';
@@ -40,7 +40,7 @@ public class Encode
 		encodeList[24]='u';
 		encodeList[25]='p';
 		encodeList[26]='t';
-		encodeList[27]='_';        //´óĞ´µÄI¶ÔÓ¦µÄ¿Õ¸ñ£¬ÓëĞ¡Ğ´µÄÇø·Ö¿ª
+		encodeList[27]='_';        //å¤§å†™çš„Iå¯¹åº”çš„ç©ºæ ¼ï¼Œä¸å°å†™çš„åŒºåˆ†å¼€
 	}
 	private String encode_transfer(String inputString)
 	{
@@ -48,13 +48,13 @@ public class Encode
 		int length=inputString.length();
 		char input[]=new char[length];
 		input=inputString.toCharArray();
-		for(int i=0;i<length;++i)  //¼ÓÃÜ×Ö·û´®
+		for(int i=0;i<length;++i)  //åŠ å¯†å­—ç¬¦ä¸²
 		{
-			if(input[i]==' ')      //¿Õ¸ñ
+			if(input[i]==' ')      //ç©ºæ ¼
 				encodeList_string+=encodeList[0];
 			else if(input[i]>='A'&&input[i]<='Z')
-			{                      //´óĞ´×ÖÄ¸
-				if(input[i]=='I')  //´óĞ´I¶ÔÓ¦µÄÇé¿ö
+			{                      //å¤§å†™å­—æ¯
+				if(input[i]=='I')  //å¤§å†™Iå¯¹åº”çš„æƒ…å†µ
 				{
 					encodeList_string+=encodeList[27];
 					continue;
@@ -63,11 +63,11 @@ public class Encode
 				char letter;
 				if(index!=9)
 					letter=(char)(encodeList[index]-32);
-				else               //¶ÔÓ¦µÄ¼ÓÃÜ×Ö·ûÎª¿Õ¸ñ
+				else               //å¯¹åº”çš„åŠ å¯†å­—ç¬¦ä¸ºç©ºæ ¼
 					letter=(char)(encodeList[index]);
 				encodeList_string+=letter;
 			}
-			else                   //Ğ¡Ğ´×ÖÄ¸
+			else                   //å°å†™å­—æ¯
 			{
 				int index=(int)(input[i]-96);
 				char letter=(char)(encodeList[index]);
@@ -76,21 +76,21 @@ public class Encode
 		}
 		return encodeList_string;
 	}
-	public String result1_encode(String input)          //µÚÒ»ÖÖ¼ÓÃÜ·½Ê½
+	public String result1_encode(String input)          //ç¬¬ä¸€ç§åŠ å¯†æ–¹å¼
 	{
 		return encode_transfer(input);
 	}
 	
-	public String result2_encode(String input,long key) //µÚ¶şÖÖ¼ÓÃÜ·½Ê½
+	public String result2_encode(String input,long key) //ç¬¬äºŒç§åŠ å¯†æ–¹å¼
 	{
 		String encode_string="";
-		Random random=new Random(key);                  //ÀûÓÃÃÜÂë×÷ÎªÖÖ×ÓÉú³ÉËæ»úÊı
+		Random random=new Random(key);                  //åˆ©ç”¨å¯†ç ä½œä¸ºç§å­ç”Ÿæˆéšæœºæ•°
 		for(int i=0;i<input.length();++i)
 		{
-			int randomNumber=random.nextInt(64)+1;      //Éú³É0µ½64µÄËæ»úÊı
-			if(input.charAt(i)==' ')                    //¿Õ¸ñ²»±ä
+			int randomNumber=random.nextInt(64)+1;      //ç”Ÿæˆ0åˆ°64çš„éšæœºæ•°
+			if(input.charAt(i)==' ')                    //ç©ºæ ¼ä¸å˜
 				encode_string+=' ';
-			else                                        //ÆäËûµÄ¸ù¾İÉú³ÉµÄËæ»úÊıËæ»ú±äÎªÆäËû×Ö·û
+			else                                        //å…¶ä»–çš„æ ¹æ®ç”Ÿæˆçš„éšæœºæ•°éšæœºå˜ä¸ºå…¶ä»–å­—ç¬¦
 			{
 				char letter=(char)(input.charAt(i)-randomNumber);
 				encode_string+=letter;

@@ -1,4 +1,4 @@
-package myaccount.model;
+ï»¿package myaccount.model;
 
 import java.util.Random;
 import java.util.Arrays;
@@ -15,32 +15,32 @@ public class TestDeal
 		Deal[] arrayDeal=new Deal[10];
 		for(int i=0;i<10;++i)
 		{
-			switch(randomType.nextInt(3))                //Ëæ»úÉú³ÉÖÖÀà
+			switch(randomType.nextInt(3))                //éšæœºç”Ÿæˆç§ç±»
 			{
 			case 0:arrayDeal[i]=new NormalDeal();break;
 			case 1:arrayDeal[i]=new StockDeal();break;
 			case 2:arrayDeal[i]=new TransferDeal();break;
 			}
 			Date today=new Date();
-			long timescaleLimit=12L*30*24*60*60*1000;    //Ê±¼ä¼ä¸ôÎªÒ»Äê
+			long timescaleLimit=12L*30*24*60*60*1000;    //æ—¶é—´é—´éš”ä¸ºä¸€å¹´
 			Date dealDate=new Date(today.getTime()-(long)(randomDate.nextDouble()*timescaleLimit));
-			arrayDeal[i].setDealDate(dealDate);          //Ëæ»úÉú³ÉÈÕÆÚ
+			arrayDeal[i].setDealDate(dealDate);          //éšæœºç”Ÿæˆæ—¥æœŸ
 			
-			double amount=randomAmount.nextDouble()*3333;//Ëæ»úÉú³ÉÊý¶î
+			double amount=randomAmount.nextDouble()*3333;//éšæœºç”Ÿæˆæ•°é¢
 		    arrayDeal[i].setAmount(Double.toString(amount));
 		}
-		System.out.println("±éÀú´òÓ¡Õû¸öÊý×é£º");
+		System.out.println("éåŽ†æ‰“å°æ•´ä¸ªæ•°ç»„ï¼š");
 		for(int i=0;i<10;++i)
 		{
 			System.out.println(arrayDeal[i].toPlainText());
 		}
-		System.out.println("Ê¹ÓÃÈÕÆÚÅÅÐò·½°¸½«Êý×éÅÅÐò:");
+		System.out.println("ä½¿ç”¨æ—¥æœŸæŽ’åºæ–¹æ¡ˆå°†æ•°ç»„æŽ’åº:");
 		Arrays.sort(arrayDeal);
 		for(int i=0;i<10;++i)
 		{
 			System.out.println(arrayDeal[i].toPlainText());
 		}
-		System.out.println("Ê¹ÓÃ°´½ð¶îÅÅÐò·½°¸½«Êý×éÅÅÐò:");
+		System.out.println("ä½¿ç”¨æŒ‰é‡‘é¢æŽ’åºæ–¹æ¡ˆå°†æ•°ç»„æŽ’åº:");
 		Arrays.sort(arrayDeal,new DealAmountComparator());
 		for(int i=0;i<10;++i)
 		{

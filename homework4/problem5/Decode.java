@@ -1,4 +1,4 @@
-package problem5;
+ï»¿package problem5;
 
 import java.util.Random;
 
@@ -13,8 +13,8 @@ public class Decode
 	private void setDecodeList()
 	{
 		decodeList=new char[28];
-		decodeList[0]='i';         //¿Õ¸ñ¶ÔÓ¦µÄ×Ö·û
-		decodeList[1]=' ';         //´Ó1µ½26·Ö±ðÎªaµ½zËù¶ÔÓ¦µÄ×Ö·û
+		decodeList[0]='i';         //ç©ºæ ¼å¯¹åº”çš„å­—ç¬¦
+		decodeList[1]=' ';         //ä»Ž1åˆ°26åˆ†åˆ«ä¸ºaåˆ°zæ‰€å¯¹åº”çš„å­—ç¬¦
 		decodeList[2]='r';
 		decodeList[3]='t';
 		decodeList[4]='n';
@@ -48,19 +48,19 @@ public class Decode
 		int length=inputString.length();
 		char input[]=new char[length];
 		input=inputString.toCharArray();
-		for(int i=0;i<length;++i)   //½âÃÜ×Ö·û´®
+		for(int i=0;i<length;++i)   //è§£å¯†å­—ç¬¦ä¸²
 		{
-			if(input[i]==' ')       //¿Õ¸ñ
+			if(input[i]==' ')       //ç©ºæ ¼
 				output+=decodeList[0];
-			else if(input[i]=='_')  //´óÐ´I¶ÔÓ¦µÄ¿Õ¸ñ
+			else if(input[i]=='_')  //å¤§å†™Iå¯¹åº”çš„ç©ºæ ¼
 				output+=decodeList[27];
 			else if(input[i]>='A'&&input[i]<='Z')
-			{                       //´óÐ´×ÖÄ¸
+			{                       //å¤§å†™å­—æ¯
 				int index=(int)(input[i]-64);
 				char letter=(char)(decodeList[index]-32);
 				output+=letter;
 			}
-			else                    //Ð¡Ð´×ÖÄ¸
+			else                    //å°å†™å­—æ¯
 			{
 				int index=(int)(input[i]-96);
 				char letter=(char)(decodeList[index]);
@@ -70,21 +70,21 @@ public class Decode
 		return output;
 	}
 	
-    public String result1_decode(String input)          //µÚÒ»ÖÖ½âÃÜ·½Ê½
+    public String result1_decode(String input)          //ç¬¬ä¸€ç§è§£å¯†æ–¹å¼
 	{
 		return decode_transfer(input);
 	}
 	
-	public String result2_decode(String input,long key) //µÚ¶þÖÖ½âÃÜ·½Ê½
+	public String result2_decode(String input,long key) //ç¬¬äºŒç§è§£å¯†æ–¹å¼
 	{
 		String decode_string="";
-		Random random=new Random(key);                  //ÀûÓÃÃÜÂë×÷ÎªÖÖ×ÓÉú³ÉËæ»úÊý
+		Random random=new Random(key);                  //åˆ©ç”¨å¯†ç ä½œä¸ºç§å­ç”Ÿæˆéšæœºæ•°
 		for(int i=0;i<input.length();++i)
 		{
 			int randomNumber=random.nextInt(64)+1;
-			if(input.charAt(i)==' ')                    //¿Õ¸ñ²»±ä
+			if(input.charAt(i)==' ')                    //ç©ºæ ¼ä¸å˜
 				decode_string+=' ';
-			else                                        //ÆäËûµÄÀûÓÃËæ»úÊý»¹Ô­ÎªÔ­ÏÈµÄ×Ö·û
+			else                                        //å…¶ä»–çš„åˆ©ç”¨éšæœºæ•°è¿˜åŽŸä¸ºåŽŸå…ˆçš„å­—ç¬¦
 			{
 				char letter=(char)(input.charAt(i)+randomNumber);
 				decode_string+=letter;
