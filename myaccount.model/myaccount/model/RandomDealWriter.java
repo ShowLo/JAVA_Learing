@@ -1,4 +1,4 @@
-package myaccount.model;
+ï»¿package myaccount.model;
 
 import java.util.Date;
 import java.util.Random;
@@ -15,18 +15,18 @@ public class RandomDealWriter
 		Deal[] arrayDeal=new Deal[10];
 		for(int i=0;i<10;++i)
 		{
-			switch(randomType.nextInt(3))                //Ëæ»úÉú³ÉÖÖÀà
+			switch(randomType.nextInt(3))                //éšæœºç”Ÿæˆç§ç±»
 			{
 			case 0:arrayDeal[i]=new NormalDeal();break;
 			case 1:arrayDeal[i]=new StockDeal();break;
 			case 2:arrayDeal[i]=new TransferDeal();break;
 			}
 			Date today=new Date();
-			long timescaleLimit=12L*30*24*60*60*1000;    //Ê±¼ä¼ä¸ôÎªÒ»Äê
+			long timescaleLimit=12L*30*24*60*60*1000;    //æ—¶é—´é—´éš”ä¸ºä¸€å¹´
 			Date dealDate=new Date(today.getTime()-(long)(randomDate.nextDouble()*timescaleLimit));
-			arrayDeal[i].setDealDate(dealDate);          //Ëæ»úÉú³ÉÈÕÆÚ
+			arrayDeal[i].setDealDate(dealDate);          //éšæœºç”Ÿæˆæ—¥æœŸ
 			
-			double amount=randomAmount.nextDouble()*3333;//Ëæ»úÉú³ÉÊý¶î
+			double amount=randomAmount.nextDouble()*3333;//éšæœºç”Ÿæˆæ•°é¢
 		    arrayDeal[i].setAmount(Double.toString(amount));
 		}
 		

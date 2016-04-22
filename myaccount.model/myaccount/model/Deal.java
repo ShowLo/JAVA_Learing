@@ -91,7 +91,7 @@ public abstract class Deal implements Comparable<Deal>,Serializable
 	{
 		this.person=person;
 	}
-	//实现Comparable接口定义的compareTo方法
+	//瀹炵幇Comparable鎺ュ彛瀹氫箟鐨刢ompareTo鏂规硶
 	public int compareTo(Deal deal)
 	{
 		return this.dealDate.compareTo(deal.dealDate);
