@@ -1,4 +1,4 @@
-package problem4;
+ï»¿package problem4;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -11,45 +11,45 @@ public class MyFrame
 	{
 		JFrame.setDefaultLookAndFeelDecorated(true);
 		JFrame frame=new JFrame("JFrame Exp");
-		frame.setSize(700,500);                                                //ÉèÖÃ³¤¿í
-		Dimension dimension=Toolkit.getDefaultToolkit().getScreenSize();       //»ñµÃÆÁÄ»³ß´ç
-		frame.setLocation((dimension.width-700)/2, (dimension.height-500)/2);  //µ÷Õûµ½ÆÁÄ»ÖĞ¼ä
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);                  //ÉèÖÃÄ¬ÈÏ¹Ø±Õ´°¿Ú²Ù×÷
-		frame.setLayout(new GridLayout(1,2));                                  //Íø¸ñ²¼¾Ö£¬Á½ÁĞÒ»ĞĞ
+		frame.setSize(700,500);                                                //è®¾ç½®é•¿å®½
+		Dimension dimension=Toolkit.getDefaultToolkit().getScreenSize();       //è·å¾—å±å¹•å°ºå¯¸
+		frame.setLocation((dimension.width-700)/2, (dimension.height-500)/2);  //è°ƒæ•´åˆ°å±å¹•ä¸­é—´
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);                  //è®¾ç½®é»˜è®¤å…³é—­çª—å£æ“ä½œ
+		frame.setLayout(new GridLayout(1,2));                                  //ç½‘æ ¼å¸ƒå±€ï¼Œä¸¤åˆ—ä¸€è¡Œ
 		
 		GridBagConstraints ctr1=new GridBagConstraints(0,0,1,1,1,1,GridBagConstraints.NORTH,GridBagConstraints.NONE,new Insets(1,1,1,1),0,0);
 		GridBagConstraints ctr2=new GridBagConstraints(0,1,2,1,1,1,GridBagConstraints.NORTH,GridBagConstraints.NONE,new Insets(10,10,10,10),0,0);
 		GridBagConstraints ctr3=new GridBagConstraints(0,2,1,1,1,1,GridBagConstraints.NORTH,GridBagConstraints.NONE,new Insets(1,1,1,1),0,0);
 		
-		JPanel leftPanel=new JPanel(new GridBagLayout());                      //×óÃæ°å£¬²ÉÓÃGridBagLayout²¼¾Ö
-		JScrollPane rightPane=new JScrollPane(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);//ÓÒÃæ°å£¬ÓĞ¹ö¶¯Ìõ
+		JPanel leftPanel=new JPanel(new GridBagLayout());                      //å·¦é¢æ¿ï¼Œé‡‡ç”¨GridBagLayoutå¸ƒå±€
+		JScrollPane rightPane=new JScrollPane(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);//å³é¢æ¿ï¼Œæœ‰æ»šåŠ¨æ¡
 		frame.add(leftPanel);
 		frame.add(rightPane);
 		
-		JPanel inputPanel=new JPanel(new FlowLayout(FlowLayout.CENTER));       //×óÃæ°åµÄÊäÈë
+		JPanel inputPanel=new JPanel(new FlowLayout(FlowLayout.CENTER));       //å·¦é¢æ¿çš„è¾“å…¥
 		JLabel label=new JLabel("Input");
-		JTextField textField=new JTextField(20);                               //20ÁĞµÄµ¥ĞĞÎÄ±¾¿ò
+		JTextField textField=new JTextField(20);                               //20åˆ—çš„å•è¡Œæ–‡æœ¬æ¡†
 		inputPanel.add(label);
 		inputPanel.add(textField);
-		leftPanel.add(inputPanel,ctr1);                                        //·ÅÔÚ×óÃæ°åµÄÉÏ²¿
+		leftPanel.add(inputPanel,ctr1);                                        //æ”¾åœ¨å·¦é¢æ¿çš„ä¸Šéƒ¨
 		
 		JScrollPane jsp=new JScrollPane(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		
 		Vector<String> vector=new Vector<String>();
 		for(int i=1;i<=10;++i)
 			vector.add("Item "+i);
-		JList list=new JList(vector);                                          //ÁĞ±í¿ò
-		list.setFixedCellWidth(200);                                           //ÉèÖÃ¿í¶È
+		JList list=new JList(vector);                                          //åˆ—è¡¨æ¡†
+		list.setFixedCellWidth(200);                                           //è®¾ç½®å®½åº¦
 		jsp.setViewportView(list);
-		leftPanel.add(jsp, ctr2);                                              //·ÅÔÚ×óÃæ°åµÄÖĞ²¿
+		leftPanel.add(jsp, ctr2);                                              //æ”¾åœ¨å·¦é¢æ¿çš„ä¸­éƒ¨
 		
-		JButton button=new JButton("È·¶¨");                                    //È·¶¨°´Å¥
-		leftPanel.add(button, ctr3);                                           //·ÅÔÚ×óÃæ°åµÄÏÂ²¿
+		JButton button=new JButton("ç¡®å®š");                                    //ç¡®å®šæŒ‰é’®
+		leftPanel.add(button, ctr3);                                           //æ”¾åœ¨å·¦é¢æ¿çš„ä¸‹éƒ¨
 		
-		JTextArea textArea=new JTextArea(10,40);                               //ÎÄ±¾Óò
-		rightPane.setViewportView(textArea);                                   //¼Óµ½ÓÒÃæ°å
+		JTextArea textArea=new JTextArea(10,40);                               //æ–‡æœ¬åŸŸ
+		rightPane.setViewportView(textArea);                                   //åŠ åˆ°å³é¢æ¿
 		
-		button.addMouseListener(new MyMouseAdapter(textField, list, textArea));//Ìí¼ÓÓÃÓÚ´¦ÀíÊó±êÊÂ¼şµÄ¼àÊÓÆ÷
+		button.addMouseListener(new MyMouseAdapter(textField, list, textArea));//æ·»åŠ ç”¨äºå¤„ç†é¼ æ ‡äº‹ä»¶çš„ç›‘è§†å™¨
 		
 		frame.setVisible(true);
 	}
@@ -71,12 +71,12 @@ class MyMouseAdapter extends MouseAdapter
 	}
 
 
-	public void mouseClicked(MouseEvent e)                                     //Êó±êµã»÷
+	public void mouseClicked(MouseEvent e)                                     //é¼ æ ‡ç‚¹å‡»
 	{
 		textArea.setText("");
-		textArea.append("Input is "+textField.getText());                      //Ìí¼Óµ½ÎÄ±¾ÓòÏÔÊ¾
-		textArea.append(System.getProperty("line.separator"));                 //»»ĞĞ
-		textArea.append("Selection is "+list.getSelectedValue());              //Ìí¼Óµ½ÎÄ±¾ÓòÏÔÊ¾
+		textArea.append("Input is "+textField.getText());                      //æ·»åŠ åˆ°æ–‡æœ¬åŸŸæ˜¾ç¤º
+		textArea.append(System.getProperty("line.separator"));                 //æ¢è¡Œ
+		textArea.append("Selection is "+list.getSelectedValue());              //æ·»åŠ åˆ°æ–‡æœ¬åŸŸæ˜¾ç¤º
 		textArea.append(System.getProperty("line.separator"));
 	}
 }

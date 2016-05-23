@@ -1,4 +1,4 @@
-package problem3;
+ï»¿package problem3;
 
 import java.awt.*;
 import java.awt.geom.QuadCurve2D;
@@ -21,41 +21,41 @@ public class Graphics2D_Swing extends JFrame
 		g2d.setColor(Color.RED);
 		int xValues[]={470,500,510,520,550,530,538,510,482,490};
 		int yValues[]={120,120,95,120,120,135,160,145,160,135};
-		g2d.fillPolygon(xValues, yValues, 10);                     //»­¶à±ßĞÎ
+		g2d.fillPolygon(xValues, yValues, 10);                     //ç”»å¤šè¾¹å½¢
 		
 		Stroke stroke=new BasicStroke(15,BasicStroke.CAP_ROUND,BasicStroke.JOIN_ROUND);
-		g2d.setStroke(stroke);                                     //ÉèÖÃ±Ê»­´ÖÏ¸
+		g2d.setStroke(stroke);                                     //è®¾ç½®ç¬”ç”»ç²—ç»†
 		
 		g2d.setColor(Color.MAGENTA);
 		g2d.rotate(Math.toRadians(-20),510,715);
-		g2d.drawLine(300, 715, 510, 715);                          //»­Ïß¶Î
+		g2d.drawLine(300, 715, 510, 715);                          //ç”»çº¿æ®µ
 		g2d.rotate(-Math.toRadians(-20),510,715);
 		g2d.rotate(Math.toRadians(20),510,715);
-		g2d.drawLine(510, 715,720,715);                            //»­Ïß¶Î
+		g2d.drawLine(510, 715,720,715);                            //ç”»çº¿æ®µ
 		g2d.rotate(-Math.toRadians(20),510,715);
 		
 		g2d.setColor(Color.GRAY);
-		g2d.drawOval(310, 180, 400, 520);                          //»­ÍÖÔ²
+		g2d.drawOval(310, 180, 400, 520);                          //ç”»æ¤­åœ†
 		
 		g2d.translate(300, 180);
 		
 		g2d.setColor(Color.BLUE);	
-		QuadCurve2D curve=new QuadCurve2D.Double(5,5,90,65,5,115); //¶ş´ÎÇúÏß
-		g2d.translate(100, 100);                                   //Æ½ÒÆ
-		g2d.draw(curve);                                           //»­¶ş´ÎÇúÏß     
+		QuadCurve2D curve=new QuadCurve2D.Double(5,5,90,65,5,115); //äºŒæ¬¡æ›²çº¿
+		g2d.translate(100, 100);                                   //å¹³ç§»
+		g2d.draw(curve);                                           //ç”»äºŒæ¬¡æ›²çº¿     
 		g2d.translate(-100, -100);   
 		
-		g2d.translate(300, 200);                                   //Æ½ÒÆ
-		g2d.rotate(Math.toRadians(163));                           //ÉèÖÃĞı×ª½Ç¶È
+		g2d.translate(300, 200);                                   //å¹³ç§»
+		g2d.rotate(Math.toRadians(163));                           //è®¾ç½®æ—‹è½¬è§’åº¦
 		g2d.draw(curve);  
 		g2d.translate(200, 20); 
-		g2d.rotate(-Math.toRadians(163));                          //Ğı×ª¸´Î»
+		g2d.rotate(-Math.toRadians(163));                          //æ—‹è½¬å¤ä½
  
 		g2d.setColor(Color.ORANGE);
-		g2d.fillOval(0, 0,200,100);                                //»­ÍÖÔ²
+		g2d.fillOval(0, 0,200,100);                                //ç”»æ¤­åœ†
 		
 		g2d.setColor(Color.GREEN);
 		g2d.setPaint(new GradientPaint(10,10,Color.YELLOW,10,30,Color.GREEN,true));
-		g2d.fillRect(0, 120, 200, 100);                            //»­¾ØĞÎ
+		g2d.fillRect(0, 120, 200, 100);                            //ç”»çŸ©å½¢
 	}
 }
